@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaka Carvalho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="estrelas1login"></div>
+    <div class="estrelas2login"></div>
+    <div class="estrelas3login"></div>
+    <div class="cabecalho">
+        <h1 id="cadAluno">Cadastro de Alunos</h1>
+        <h2 id="cadAluno2">Os alunos poderão ser cadastrados no sistema a partir dessa página.</h2>
+    </div>
+    <form action="alunoscadastrados.php" method="post">
+        <div class="cadastro">
+            <div class="direita">
+                <input class="d1" type="text" name="nomeMae" id="mae" placeholder="Nome da Mãe">
+                <input class="d2" type="text" name="nomePai" id="pai" placeholder="Nome do Pai">
+                <input class="d3" type="text" name="sexualidade" id="genero" placeholder="Sexo">
+                <input class="d4" type="text" name="nomeAluno" id="aluno" placeholder="Nome do Aluno">
+                <input class="d5" type="tel" name="celular" id="numero" placeholder="Número de Celular">
+            </div>
+            <div class="esquerda">
+                <input class="e1" type="date" name="data" id="dataDeNascimento" placeholder="Data de Nascimento">
+                <input class="e2" type="number" name="cpf" id="cpfaluno" placeholder="CPF">
+                <input class="e3" type="text" name="rua" id="nomeRua" placeholder="Rua">
+                <input class="e4" type="text" name="bairro" id="nomeBairro" placeholder="Bairro">
+                <input class="e5" type="number" name="numeroCasa" id="casa" placeholder="Número da Casa">
+            </div>
+        </div>
+        <div class="enviarcadastro">
+            <input type="submit" value="Cadastrar Aluno">
+            <input type="reset" value="Limpar Cadastro">
+        </div>
+    </form>
+</body>
+
+</html>

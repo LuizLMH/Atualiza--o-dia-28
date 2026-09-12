@@ -1,0 +1,1493 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    user-select: none;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: saida .5s ease both;
+}
+
+@keyframes saida {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+
+    to {
+        transform: none;
+        opacity: 0;
+    }
+
+}
+
+::view-transition-new(root) {
+    animation: entradaPagina .5s ease both;
+}
+
+@keyframes entradaPagina {
+    from {
+        transform: none;
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+
+}
+
+.estrelas1 {
+    opacity: 1;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -3;
+    pointer-events: none;
+    background: url("ft1.jpg");
+    animation: mover1 linear;
+    animation-timeline: scroll();
+}
+
+@keyframes mover1 {
+    from {
+        background-position: 0 700px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+.estrelas2 {
+    background: url("ft2.jpg");
+    animation: mover2 linear;
+    animation-timeline: scroll();
+    position: fixed;
+    opacity: .80;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
+@keyframes mover2 {
+    from {
+        background-position: 0 1100px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+.estrelas3 {
+    opacity: .20;
+    background: url("ft3.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    animation: mover3 linear;
+    animation-timeline: scroll();
+    opacity: .20;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes mover3 {
+    from {
+        background-position: 0 1650px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+.index {
+    width: 100%;
+    padding-bottom: 3%;
+    margin-bottom: 1%;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-style: wavy;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all .4s ease;
+    box-shadow: 0 0 15px white;
+    color: white;
+    background: transparent;
+    border: 3px groove white;
+}
+
+.index:hover {
+    background: rgba(255, 255, 255, 0.288);
+}
+
+#P1 {
+    font-weight: 999;
+    font-size: 25px;
+}
+
+.pages {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 25px;
+    margin-top: 3%;
+    margin-right: 1%;
+}
+
+.pages a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-style: double;
+    cursor: pointer;
+    text-align: left;
+    display: inline-block;
+    transition: all .3s ease;
+}
+
+.pages a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-style: double;
+}
+
+.dividir {
+    display: flex;
+}
+
+.card {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px white;
+    border-radius: 20px;
+    padding: 50px;
+    width: 30%;
+    height: 90%;
+    margin-top: 2%;
+    transition: all .5s ease;
+    animation: entrada 1.3s forwards;
+}
+
+#titulo {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-style: wavy;
+}
+
+#texto {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+
+@keyframes entrada {
+    to {
+        transform: translateX(10%);
+        opacity: 1;
+        scale: 1;
+    }
+
+    from {
+        transform: translateX(-100%);
+        opacity: .80;
+        scale: .80;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.cardFT {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px gray;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+    border-radius: 10%;
+    background: white;
+}
+
+.cardFT img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    transition: all .3s ease;
+}
+
+.cardFT:hover {
+    transform: scale(1.05);
+    border-radius: 20px;
+
+}
+
+.cardFT img:hover {
+    box-shadow: 0 0 15px gray;
+    border-radius: 20px;
+}
+
+.card1-5 {
+    margin-left: 16%;
+    margin-top: 2%;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+    background-color: rgba(255, 255, 255, 0.288);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4%;
+    /* border: 2px solid rgba(186, 18, 228, 0.747);*/
+    border-radius: 20px;
+    transition: all .3s ease;
+    margin-right: 3%;
+}
+
+.card1 {
+    animation: entradaCard1 2s forwards;
+}
+
+@keyframes entradaCard1 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card2 {
+    animation: entradaCard2 2.5s forwards;
+}
+
+@keyframes entradaCard2 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card3 {
+    animation: entradaCard3 3s forwards;
+}
+
+@keyframes entradaCard3 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card4 {
+    animation: entradaCard4 3.5s forwards;
+}
+
+@keyframes entradaCard4 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card4 {
+    animation: entradaCard4 4s forwards;
+}
+
+@keyframes entradaCard4 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card5 {
+    animation: entradaCard5 4.5s forwards;
+}
+
+@keyframes entradaCard5 {
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(80%);
+        opacity: .80;
+    }
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover,
+.card5:hover {
+    box-shadow: 0 0 15px gray;
+}
+
+.card1 img,
+.card2 img,
+.card3 img,
+.card4 img,
+.card5 img {
+    border: 2px solid transparent;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    width: 25%;
+    height: auto;
+}
+
+.card1 p,
+.card2 p,
+.card3 p,
+.card4 p,
+.card5 p {
+    display: flex;
+}
+
+#aluno1 {
+    display: flex;
+    text-align: left;
+    margin-left: 1%;
+    margin-right: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+#aluno12 {
+    color: white;
+    font-size: 18px;
+}
+
+.cardA-1-5 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.cardA1,
+.cardA2,
+.cardA3,
+.cardA4,
+.cardA5 {
+    /*  border: 2px solid rgba(186, 18, 228, 0.651);*/
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px;
+    transition: all .2s ease;
+}
+
+.cardA1:hover,
+.cardA2:hover,
+.cardA3:hover,
+.cardA4:hover,
+.cardA5:hover {
+    box-shadow: 0 0 20px gray;
+    background-color: rgba(173, 169, 169, 0.158);
+    transform: scale(1.03);
+}
+
+.cardA1 img,
+.cardA2 img,
+.cardA3 img,
+.cardA4 img,
+.cardA5 img {
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    scale: 1.3;
+    margin-top: 4%;
+    box-sizing: content-box;
+    transition: all .3s ease;
+
+}
+
+.cardA1 img:hover,
+.cardA2 img:hover,
+.cardA3 img:hover,
+.cardA4 img:hover,
+.cardA5 img:hover {
+    box-shadow: 0 0 10px white;
+    transform: scale(1.02);
+}
+
+.cardA1 a,
+.cardA2 a,
+.cardA3 a,
+.cardA4 a,
+.cardA5 a {
+    display: inline-block;
+    margin-top: 15%;
+    font-size: 22px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+    transition: all .3s ease;
+    color: gray;
+}
+
+.cardA1 a:hover,
+.cardA2 a:hover,
+.cardA3 a:hover,
+.cardA4 a:hover,
+.cardA5 a:hover {
+    box-shadow: 0 3px 10px white;
+    transform: scale(1.04);
+    border-radius: 20px;
+    color: white;
+
+}
+
+#cardA {
+    font-size: 18px;
+    color: white;
+}
+
+#cardA2 {
+    font-size: 18px;
+    color: white;
+}
+
+.cardA1 {
+    animation: aparecerrange linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes aparecerrange {
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardA2 {
+    animation: aparecer2range linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes aparecer2range {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardA3 {
+    animation: aparecer3range linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes aparecer3range {
+    from {
+        opacity: 0;
+        transform: translateY(250px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardA4 {
+    animation: aparecer4range linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes aparecer4range {
+    from {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardA5 {
+    animation: aparecer5range linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes aparecer5range {
+    from {
+        opacity: 0;
+        transform: translateY(350px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fimdapagina {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    box-shadow: 0 0 20px gray;
+    border-radius: 20px;
+    justify-content: center;
+    padding: 50px;
+    gap: 20px;
+    transition: all .3s ease;
+}
+
+.fimdapagina:hover {
+    background-color: rgba(173, 169, 169, 0.158);
+}
+
+.fimdapagina a {
+    display: inline-block;
+    justify-content: center;
+    transition: all .3s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-style: double;
+    font-size: 25px;
+}
+
+.fimdapagina a:hover {
+    box-shadow: 0 5px 10px white;
+    border-radius: 20px;
+    color: white;
+}
+
+#w,
+#i,
+#e {
+    width: 10%;
+    display: flex;
+    text-align: center;
+    color: white;
+}
+
+/*A partir daqui é a página de login*/
+.conteiner {
+    min-height: 100vh;
+    place-items: center;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    width: 50%;
+}
+
+.formulario {
+    width: 120%;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.formulario:hover {
+    box-shadow: 0 0 15px gray;
+    transform: scale(1.02);
+}
+
+.formulario input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
+    outline: none;
+    width: 500px;
+    height: 70px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    text-decoration-color: transparent;
+    text-decoration-style: under;
+    box-shadow: 0 0 5px gray;
+    transition: all .3s ease;
+    font-size: 20px;
+}
+
+label[for="nome"] {
+    color: white;
+    font-size: 20px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    animation: subir 1.5s forwards;
+    font-weight: 999;
+}
+
+label[for="senha"] {
+    color: white;
+    font-size: 20px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    animation: subir2 2s forwards;
+    font-weight: 999;
+}
+
+.formulario input[type="text"] {
+    animation: subir 1.5s forwards;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(50px);
+        opacity: .20;
+        scale: .80;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1;
+    }
+
+}
+
+.formulario input[type="password"] {
+    animation: subir2 2s forwards;
+}
+
+@keyframes subir2 {
+    from {
+        transform: translateY(70px);
+        opacity: .20;
+        scale: .90;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.formulario input:hover {
+    color: white;
+    text-decoration: none;
+    text-decoration-color: white;
+    text-decoration-style: under;
+    box-shadow: 0 0 15px white;
+}
+
+.formulario input[type="submit"] {
+    background-color: transparent;
+    box-shadow: 0 5px 20px gray;
+    font-size: 20px;
+    transition: all .3s ease;
+    text-decoration: none;
+    animation: subir3 2s forwards;
+    width: 40%;
+    display: flex;
+}
+
+.formulario input[type="button"] {
+    background-color: transparent;
+    box-shadow: 0 5px 20px gray;
+    font-size: 20px;
+    transition: all .3s ease;
+    text-decoration: none;
+    animation: subir3 2s forwards;
+    width: 40%;
+    display: flex;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: rgba(128, 128, 128, 0.253);
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.formulario input[type="button"]:hover {
+    background-color: rgba(128, 128, 128, 0.253);
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.submit,
+button {
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+@keyframes subir3 {
+    from {
+        transform: translateY(90px);
+        opacity: .20;
+        scale: .70;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+.formulario input::placeholder {
+    display: flex;
+    margin-left: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.formulario input[type="text"]:not(:placeholder-shown) {
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+.formulario input[type="password"]:not(:placeholder-shown) {
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+.estrelas1login {
+    opacity: .80;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+    background: url("ft1.jpg");
+    animation: infinito 60s linear infinite;
+}
+
+@keyframes infinito {
+    from {
+        transform: scale(1.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.estrelas2login {
+    background: url("ft2.jpg");
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .50;
+    animation: infinito2 55s linear infinite alternate-reverse;
+}
+
+@keyframes infinito2 {
+    from {
+        transform: scale(1.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.estrelas3login {
+    background: url("ft3.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: .50;
+    pointer-events: none;
+    animation: infinito3 60s linear infinite alternate;
+}
+
+@keyframes infinito3 {
+    from {
+        transform: scale(1.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/*A partir daqui é o css da página de cadastro de alunos*/
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+    color: rgb(199, 194, 194);
+}
+
+#cadAluno {
+    font-size: 30px;
+    font-weight: 899;
+}
+
+#cadAluno2 {
+    font-size: 25px;
+    font-weight: 899;
+    text-align: center;
+}
+
+.cadastro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.direita,
+.esquerda {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.direita input,
+.esquerda input {
+    width: 85%;
+    height: 65px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 699;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.288);
+}
+
+.direita input::placeholder,
+.esquerda input::placeholder {
+    color: white;
+    display: flex;
+    text-align: left;
+}
+
+.d1 {
+    animation: ind1 1s forwards;
+}
+
+@keyframes ind1 {
+    from {
+        transform: translateY(200%) translateX(-100%) scale(3.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.d2 {
+    animation: ind2 1.5s forwards;
+}
+
+@keyframes ind2 {
+    from {
+        transform: translateY(200%) translateX(-150%) scale(3.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.d3 {
+    animation: ind3 2s forwards;
+}
+
+@keyframes ind3 {
+    from {
+        transform: translateY(200%) translateX(-200%) scale(3.3);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.d4 {
+    animation: ind4 2.5s forwards;
+}
+
+@keyframes ind4 {
+    from {
+        transform: translateY(200%) translateX(-250%) scale(3.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.d5 {
+    animation: ind5 3s forwards;
+}
+
+@keyframes ind5 {
+    from {
+        transform: translateY(200%) translateX(-300%) scale(3.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.e1 {
+    animation: ine1 1s forwards;
+}
+
+@keyframes ine1 {
+    from {
+        transform: translateY(200%) translateX(100%) scale(3.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.e2 {
+    animation: ine2 1.5s forwards;
+}
+
+@keyframes ine2 {
+    from {
+        transform: translateY(200%) translateX(150%) scale(3.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.e3 {
+    animation: ine3 2s forwards;
+}
+
+@keyframes ine3 {
+    from {
+        transform: translateY(200%) translateX(200%) scale(3.3);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.e4 {
+    animation: ine4 2.5s forwards;
+}
+
+@keyframes ine4 {
+    from {
+        transform: translateY(200%) translateX(250%) scale(3.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.e5 {
+    animation: ine5 3s forwards;
+}
+
+@keyframes ine5 {
+    from {
+        transform: translateY(200%) translateX(300%) scale(3.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.enviarcadastro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 80px;
+}
+
+.enviarcadastro input[type="submit"] {
+    background-color: rgba(128, 128, 128, 0.253);
+    box-shadow: 0 5px 20px gray;
+    color: white;
+    font-size: 20px;
+    transition: all .3s ease;
+    text-decoration: none;
+    animation: subircadastro 3.7s forwards;
+    border-radius: 20px;
+    width: 300px;
+    height: 70px;
+    display: flex;
+}
+
+.enviarcadastro input[type="submit"]:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.enviarcadastro input[type="reset"] {
+    background-color: rgba(128, 128, 128, 0.253);
+    box-shadow: 0 5px 20px gray;
+    color: white;
+    font-size: 20px;
+    transition: all .3s ease;
+    text-decoration: none;
+    animation: subircadastro 3.7s forwards;
+    border-radius: 20px;
+    width: 300px;
+    height: 70px;
+    display: flex;
+}
+
+.enviarcadastro input[type="reset"]:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@keyframes subircadastro {
+    from {
+        transform: translateY(70px);
+        opacity: 0;
+        scale: .50;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/*A partir daqui é da página de visualização dos alunos cadastrados no sisteme*/
+.titulo {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#titulolista {
+    font-size: 40px;
+    font-weight: 985;
+}
+
+#titulolistaP {
+    font-size: 20px;
+}
+
+#ativo {
+    background-color: rgba(255, 255, 255, 0.288);
+    box-shadow: 0 0 15px white;
+    color: white;
+}
+
+#inativo {
+    background-color: black;
+    color: white;
+}
+
+table {
+    height: 80vh;
+    width: 100%;
+    border-spacing: 15px;
+    border-collapse: separate;
+}
+
+tr {
+    margin-bottom: 50px;
+}
+
+th {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-style: wavy;
+}
+
+td,
+th {
+    font-size: 25px;
+    font-weight: 954;
+    border: 5px double white;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    transition: all .2s ease;
+}
+
+td:hover,
+th:hover {
+    transform: scale(1.02);
+    border: 5px solid white;
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+#aparecer1 {
+    animation: aparecer1 1.5s forwards;
+}
+
+@keyframes aparecer1 {
+    from {
+        transform: translateY(-200px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+#aparecer2 {
+    animation: aparecer2 2s forwards;
+}
+
+@keyframes aparecer2 {
+    from {
+        transform: translateY(-250px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+#aparecer3 {
+    animation: aparecer3 2.5s forwards;
+}
+
+@keyframes aparecer3 {
+    from {
+        transform: translateY(-300px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+#aparecer4 {
+    animation: aparecer4 3s forwards;
+}
+
+@keyframes aparecer4 {
+    from {
+        transform: translateY(-350px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+#aparecer5 {
+    animation: aparecer5 3.5s forwards;
+}
+
+@keyframes aparecer5 {
+    from {
+        transform: translateY(-400px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+#aparecer6 {
+    animation: aparecer6 4s forwards;
+}
+
+@keyframes aparecer6 {
+    from {
+        transform: translateY(-450px) scale(2);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.globo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+}
+
+.matricula {
+    width: 50%;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.matricula input[type="submit"] {
+    margin-bottom: 0;
+    width: 100%;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    font-size: 15px;
+}
+
+.matricula input {
+    border-radius: 20px;
+    outline: none;
+    width: 450px;
+    height: 65px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 15px;
+    background-color: transparent;
+    transition: all .2s ease;
+}
+
+.matricula input:hover {
+    box-shadow: 0 0 15px white;
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+.edit1 {
+    animation: edit1 1.5s forwards;
+}
+
+@keyframes edit1 {
+    from {
+        transform: translate(-250px, 200px) scale(0) rotateZ(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translate(0, 0) scale(1) rotateZ(0);
+        opacity: 1;
+    }
+}
+
+.edit2 {
+    animation: edit2 2s forwards;
+}
+
+@keyframes edit2 {
+    from {
+        transform: translate(250px, 200px) scale(0) rotateZ(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translate(0, 0) scale(1) rotateZ(0);
+        opacity: 1;
+    }
+}
+
+.edit3 {
+    animation: edit3 2.5s forwards;
+}
+
+@keyframes edit3 {
+    from {
+        transform: translate(-250px, 200px) scale(0) rotateZ(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translate(0, 0) scale(1) rotateZ(0);
+        opacity: 1;
+    }
+}
+
+.edit4 {
+    animation: edit4 3s forwards;
+}
+
+@keyframes edit4 {
+    from {
+        transform: translate(250px, 200px) scale(0) rotateZ(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translate(0, 0) scale(1) rotateZ(0);
+        opacity: 1;
+    }
+}
+
+.edit5 {
+    animation: edit5 3.5s forwards;
+}
+
+@keyframes edit5 {
+    from {
+        transform: translateY(350px) scale(0);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.288);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
